@@ -20,3 +20,13 @@ there are 2 additional branchs for 1 practice, Compose and SwiftUI.
 • [컴포우즈 브랜치]   
 • [스위프트유아이 브랜치]   
 
+
+## My Pohang App(내 포항 앱)
+This app shows some place of these categories in my city Pohang:(이 앱은 포항에 있는 아래 카테고리들의 장소를 보여줍니다.)   
+• Coffe shops(카페)   
+• Restaurants(식당)   
+• Kid-friendly places(아이와 함께)   
+• Parks(공원)   
+• Shopping centers(쇼핑)   
+
+
