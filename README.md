@@ -30,3 +30,12 @@ This app shows some place of these categories in my city Pohang:(이 앱은 포�
 • Shopping centers(쇼핑)   
 
 
+## Figma Low-Fidelity prototype (피그마 대략적인 설계)
+### Compact size(아담한 크기)
+<img src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/a9290cd9-ad25-4056-bcb9-36e689552d26" width="600" />
+
+### Medium size(중간 크기)
+<img src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/5ae80e77-30fa-4d0a-9bbd-851594f59a23" width="500" />
+
+### Expaned size(큰 크기)
+<img src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/2d4a34f6-7c84-4905-b358-bcf5fde794ba" width="700" />
