@@ -39,3 +39,9 @@ This app shows some place of these categories in my city Pohang:(이 앱은 포�
 
 ### Expaned size(큰 크기)
 <img src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/2d4a34f6-7c84-4905-b358-bcf5fde794ba" width="700" />
+
+
+## Problem Solve (문제 해결)
+### Compose (컴포즈)
+#### Can not extract resource error (리소스 추출 문제)
+[Can not extract resource from com.android.aaptcompiler.ParsedResource@1543b8e6.](https://shwoghk14.blogspot.com/2023/12/android-compose-can-not-extract.html)
