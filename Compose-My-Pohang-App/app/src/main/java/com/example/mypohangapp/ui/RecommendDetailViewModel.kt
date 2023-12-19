@@ -18,6 +18,10 @@ class RecommendDetailViewModel : ViewModel() {
             )
         }
     }
+
+    fun clearRecommend() {
+        _uiState.value = RecommendDetailUIState()
+    }
 }
 
 data class RecommendDetailUIState(
