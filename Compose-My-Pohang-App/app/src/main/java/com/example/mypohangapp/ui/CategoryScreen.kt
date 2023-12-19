@@ -17,8 +17,9 @@ fun CategoryScreen(modifier: Modifier = Modifier) {
     Scaffold(
         topBar = {
             MyPohangTopAppBar()
-        }
-    ) {innerPadding ->
+        },
+        modifier = modifier
+    ) { innerPadding ->
         Text("Hello", modifier = Modifier.padding(innerPadding))
     }
 }
@@ -26,7 +27,10 @@ fun CategoryScreen(modifier: Modifier = Modifier) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyPohangTopAppBar(modifier: Modifier = Modifier) {
-    TopAppBar(title = { Text(stringResource(id = R.string.app_name))})
+    TopAppBar(
+        title = { Text(stringResource(id = R.string.app_name)) },
+        modifier = modifier
+    )
 }
 
 @Preview(showBackground = true)
