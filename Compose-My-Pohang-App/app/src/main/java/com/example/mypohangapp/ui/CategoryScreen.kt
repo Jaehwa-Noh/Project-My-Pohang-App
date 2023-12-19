@@ -55,6 +55,8 @@ fun MyPohangApp(modifier: Modifier = Modifier) {
     val recommendListViewModel: RecommendListViewModel = viewModel()
     val recommendListUIState by recommendListViewModel.uiState.collectAsState()
 
+
+
     Scaffold(
         topBar = {
             MyPohangTopAppBar()
@@ -84,9 +86,15 @@ fun MyPohangApp(modifier: Modifier = Modifier) {
                 RecommendListScreen(
                     recommendList = recommendListUIState.recommends,
                     onRecommendClick = {
-
+                        navController.navigate(
+                            PohangScreen.RecommendDetail.name
+                        )
                     }
                 )
+            }
+
+            composable(route = PohangScreen.RecommendDetail.name) {
+                RecommendDetailScreen()
             }
         }
     }
