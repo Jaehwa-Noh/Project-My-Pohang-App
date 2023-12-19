@@ -50,7 +50,7 @@ fun RecommendListScreen(
 }
 
 @Composable
-fun RecommendListItem(
+private fun RecommendListItem(
     modifier: Modifier = Modifier,
     recommend: Recommend
 ) {

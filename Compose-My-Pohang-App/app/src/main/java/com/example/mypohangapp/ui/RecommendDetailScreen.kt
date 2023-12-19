@@ -50,7 +50,7 @@ fun RecommendDetailScreen(
 }
 
 @Composable
-fun RecommendDetailTextArea(
+private fun RecommendDetailTextArea(
     recommend: Recommend,
     modifier: Modifier = Modifier
 ) {
