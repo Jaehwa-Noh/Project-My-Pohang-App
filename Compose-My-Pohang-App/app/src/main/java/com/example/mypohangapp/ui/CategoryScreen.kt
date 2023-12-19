@@ -52,6 +52,9 @@ fun MyPohangApp(modifier: Modifier = Modifier) {
     val categoryViewModel: CategoryViewModel = viewModel()
     val categoryUiState by categoryViewModel.uiState.collectAsState()
 
+    val recommendListViewModel: RecommendListViewModel = viewModel()
+    val recommendListUIState by recommendListViewModel.uiState.collectAsState()
+
     Scaffold(
         topBar = {
             MyPohangTopAppBar()
@@ -70,6 +73,10 @@ fun MyPohangApp(modifier: Modifier = Modifier) {
                     modifier = Modifier.fillMaxWidth(),
                     onCategoryClick = {
                         categoryViewModel.selectCategory(it)
+                        recommendListViewModel.setSelectedCategory(it)
+                        navController.navigate(
+                            PohangScreen.Recommend.name
+                        )
                     }
                 )
             }
