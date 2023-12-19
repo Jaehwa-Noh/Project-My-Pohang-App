@@ -13,6 +13,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -37,7 +38,8 @@ fun RecommendDetailScreen(
                 contentDescription = null,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1f)
+                    .weight(1f),
+                contentScale = ContentScale.Crop
             )
             RecommendDetailTextArea(
                 recommend = recommend,
@@ -55,7 +57,7 @@ fun RecommendDetailTextArea(
     Column(
         modifier = modifier
             .verticalScroll(rememberScrollState())
-            .padding(horizontal = 8.dp)
+            .padding(8.dp)
     ) {
         Text(
             stringResource(id = recommend.name),
