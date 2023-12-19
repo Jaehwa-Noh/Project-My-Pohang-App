@@ -81,7 +81,12 @@ fun MyPohangApp(modifier: Modifier = Modifier) {
                 )
             }
             composable(route = PohangScreen.Recommend.name) {
-                RecommendListScreen()
+                RecommendListScreen(
+                    recommendList = recommendListUIState.recommends,
+                    onRecommendClick = {
+
+                    }
+                )
             }
         }
     }
