@@ -14,12 +14,14 @@ class CategoryViewModel : ViewModel() {
     fun selectCategory(category: Category) {
         _uiState.update { currentState ->
             currentState.copy(
-                category = category
+                selectedCategory = category
             )
         }
     }
 }
 
 data class CategoryUiState(
-    val category: Category? = null
+    val categories: List<Category> = emptyList(),
+    val selectedCategory: Category? = null
+
 )
