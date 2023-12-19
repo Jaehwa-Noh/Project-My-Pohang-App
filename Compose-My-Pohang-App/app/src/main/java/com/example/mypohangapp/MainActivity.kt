@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.mypohangapp.ui.CategoryScreen
+import com.example.mypohangapp.ui.MyPohangApp
 import com.example.mypohangapp.ui.theme.MyPohangAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    CategoryScreen()
+                    MyPohangApp()
                 }
             }
         }
