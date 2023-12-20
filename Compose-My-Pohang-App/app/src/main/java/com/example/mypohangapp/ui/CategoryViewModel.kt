@@ -31,6 +31,14 @@ class CategoryViewModel : ViewModel() {
             )
         }
     }
+
+    fun clearCategory() {
+        _uiState.update {currentState ->
+            currentState.copy(
+                selectedCategory = null
+            )
+        }
+    }
 }
 
 data class CategoryUiState(
