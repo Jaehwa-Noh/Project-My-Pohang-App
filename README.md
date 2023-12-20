@@ -44,4 +44,7 @@ This app shows some place of these categories in my city Pohang:(이 앱은 포�
 ## Problem Solve (문제 해결)
 ### Compose (컴포즈)
 #### Can not extract resource error (리소스 추출 문제)
-[Can not extract resource from com.android.aaptcompiler.ParsedResource@1543b8e6.](https://shwoghk14.blogspot.com/2023/12/android-compose-can-not-extract.html)
+• [Can not extract resource from com.android.aaptcompiler.ParsedResource@1543b8e6.](https://shwoghk14.blogspot.com/2023/12/android-compose-can-not-extract.html)
+
+#### Has been compiled by a more recent version of the Java Runtime (class file version 63.0), this version of the Java Runtime only recognizes class file versions up to 61.0 (Java 런타임 버전 문제)
+• [Has been compiled by a more recent version of the Java Runtime (class file version 63.0), this version of the Java Runtime only recognizes class file versions up to 61.0](https://shwoghk14.blogspot.com/2023/12/android-compose-has-been-compiled-by.html)
