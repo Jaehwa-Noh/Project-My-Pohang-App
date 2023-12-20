@@ -51,8 +51,7 @@ import com.example.mypohangapp.ui.utils.MyPohangNavigationType
 enum class PohangScreen(@StringRes val title: Int) {
     Category(title = R.string.category),
     Recommend(title = R.string.recommend),
-    RecommendDetail(title = R.string.recommend_detail),
-    RecommendAndDetail(title = R.string.recommend_list_and_detail)
+    RecommendDetail(title = R.string.recommend_detail)
 }
 
 @Composable
