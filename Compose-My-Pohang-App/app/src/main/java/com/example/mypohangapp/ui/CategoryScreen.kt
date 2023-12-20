@@ -5,7 +5,6 @@ import androidx.activity.compose.BackHandler
 import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,21 +14,10 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.NavigationDrawerItem
-import androidx.compose.material3.NavigationRail
-import androidx.compose.material3.NavigationRailItem
-import androidx.compose.material3.PermanentDrawerSheet
-import androidx.compose.material3.PermanentNavigationDrawer
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -48,6 +36,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.mypohangapp.R
+import com.example.mypohangapp.component.MyPohangNavigationRail
+import com.example.mypohangapp.component.MyPohangPermanentNavigationDrawer
+import com.example.mypohangapp.component.MyPohangTopAppBar
 import com.example.mypohangapp.model.Category
 import com.example.mypohangapp.ui.theme.MyPohangAppTheme
 import com.example.mypohangapp.ui.utils.MyPohangNavigationType
@@ -190,27 +181,18 @@ fun MyPohangApp(
 
         MyPohangNavigationType.NAVIGATION_RAIL -> {
             Row(modifier = modifier.fillMaxSize()) {
-                NavigationRail {
-                    categoryUiState.categories.forEach { category ->
-                        NavigationRailItem(
-                            selected = categoryUiState.selectedCategory == category,
-                            onClick = {
-                                categoryViewModel.selectCategory(category)
-                                recommendListViewModel.setSelectedCategory(category)
-                                recommendDetailViewModel.clearRecommend()
-                                navController.navigate(
-                                    PohangScreen.Recommend.name
-                                )
-                            },
-                            icon = {
-                                Icon(
-                                    painterResource(id = category.iconId),
-                                    contentDescription = null
-                                )
-                            },
-                            label = { Text(stringResource(id = category.categoryName)) })
+                MyPohangNavigationRail(
+                    categories = categoryUiState.categories,
+                    selectedCategory = categoryUiState.selectedCategory,
+                    onClick = { category ->
+                        categoryViewModel.selectCategory(category)
+                        recommendListViewModel.setSelectedCategory(category)
+                        recommendDetailViewModel.clearRecommend()
+                        navController.navigate(
+                            PohangScreen.Recommend.name
+                        )
                     }
-                }
+                )
 
                 if (categoryUiState.selectedCategory != null) {
                     RecommendListScreen(
@@ -275,26 +257,22 @@ fun MyPohangApp(
             }
         }
 
+
         MyPohangNavigationType.PERMANENT_NAVIGATION_DRAWER -> {
-            PermanentNavigationDrawer(drawerContent = {
-                PermanentDrawerSheet(
-                    modifier = Modifier
-                        .width(dimensionResource(id = R.dimen.drawer_width))
-                ) {
-                    NavigationDrawerContent(
-                        categoryList = categoryUiState.categories,
-                        selectedDestination = categoryUiState.selectedCategory,
-                        onTabPressed = { category ->
-                            categoryViewModel.selectCategory(category)
-                            recommendListViewModel.setSelectedCategory(category)
-                            recommendDetailViewModel.clearRecommend()
-                            navController.navigate(
-                                PohangScreen.Recommend.name
-                            )
-                        }
+            MyPohangPermanentNavigationDrawer(
+                modifier = Modifier
+                    .width(dimensionResource(id = R.dimen.drawer_width)),
+                selectedCategory = categoryUiState.selectedCategory,
+                categories = categoryUiState.categories,
+                onTabPressed = { category ->
+                    categoryViewModel.selectCategory(category)
+                    recommendListViewModel.setSelectedCategory(category)
+                    recommendDetailViewModel.clearRecommend()
+                    navController.navigate(
+                        PohangScreen.Recommend.name
                     )
                 }
-            }) {
+            ) {
                 Row(modifier = modifier.fillMaxSize()) {
                     if (categoryUiState.selectedCategory != null) {
                         RecommendListScreen(
@@ -363,37 +341,6 @@ fun MyPohangApp(
     }
 }
 
-@Composable
-private fun NavigationDrawerContent(
-    categoryList: List<Category>,
-    selectedDestination: Category?,
-    onTabPressed: (Category) -> Unit,
-    modifier: Modifier = Modifier
-) {
-    Column(modifier = modifier) {
-
-        Text(
-            text = stringResource(id = R.string.app_name),
-            style = MaterialTheme.typography.headlineSmall,
-            modifier = Modifier
-                .padding(dimensionResource(id = R.dimen.drawer_header))
-        )
-
-        categoryList.forEach { category ->
-            NavigationDrawerItem(
-                label = { Text(stringResource(id = category.categoryName)) },
-                selected = category == selectedDestination,
-                onClick = { onTabPressed(category) },
-                icon = {
-                    Icon(
-                        painter = painterResource(id = category.iconId),
-                        contentDescription = null
-                    )
-                }
-            )
-        }
-    }
-}
 
 @Composable
 private fun CategoryScreen(
@@ -432,35 +379,6 @@ private fun CategoryScreen(
     }
 }
 
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun MyPohangTopAppBar(
-    modifier: Modifier = Modifier,
-    currentTitle: Int,
-    canNavigateBack: Boolean,
-    navigateUp: () -> Unit
-) {
-    TopAppBar(
-        title = { Text(stringResource(id = currentTitle)) },
-        modifier = modifier,
-        colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer
-        ),
-        navigationIcon = {
-            if (canNavigateBack) {
-                IconButton(onClick = navigateUp) {
-                    Icon(
-                        imageVector = Icons.Filled.ArrowBack,
-                        contentDescription = stringResource(R.string.back_button)
-                    )
-                }
-            } else {
-                Box {}
-            }
-        }
-    )
-}
 
 @Preview(showBackground = true)
 @Composable
