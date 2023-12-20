@@ -1,11 +1,12 @@
 package com.example.mypohangapp.ui
 
+import android.app.Activity
+import androidx.activity.compose.BackHandler
 import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -25,12 +26,13 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.layout
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -43,6 +45,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.mypohangapp.R
 import com.example.mypohangapp.model.Category
 import com.example.mypohangapp.ui.theme.MyPohangAppTheme
+import com.example.mypohangapp.ui.utils.MyPohangNavigationType
 
 
 enum class PohangScreen(@StringRes val title: Int) {
@@ -53,7 +56,10 @@ enum class PohangScreen(@StringRes val title: Int) {
 }
 
 @Composable
-fun MyPohangApp(modifier: Modifier = Modifier) {
+fun MyPohangApp(
+    modifier: Modifier = Modifier,
+    windowSize: WindowWidthSizeClass
+) {
     val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = PohangScreen.valueOf(
@@ -69,139 +75,285 @@ fun MyPohangApp(modifier: Modifier = Modifier) {
     val recommendDetailViewModel: RecommendDetailViewModel = viewModel()
     val recommendDetailUIState by recommendDetailViewModel.uiState.collectAsState()
 
-    Row(modifier = modifier.fillMaxSize()) {
-        NavigationRail {
-            categoryUiState.categories.forEach { category ->
-                NavigationRailItem(
-                    selected = categoryUiState.selectedCategory == category,
-                    onClick = {
-                        categoryViewModel.selectCategory(category)
-                        recommendListViewModel.setSelectedCategory(category)
-                        recommendDetailViewModel.clearRecommend()
-                    },
-                    icon = {
-                        Icon(
-                            painterResource(id = category.iconId),
-                            contentDescription = null
+    val activity = (LocalContext.current as? Activity)
+
+    val navigationType = when (windowSize) {
+        WindowWidthSizeClass.Compact -> {
+            MyPohangNavigationType.LIST
+        }
+
+        WindowWidthSizeClass.Medium -> {
+            MyPohangNavigationType.NAVIGATION_RAIL
+        }
+
+        WindowWidthSizeClass.Expanded -> {
+            MyPohangNavigationType.PERMANENT_NAVIGATION_DRAWER
+        }
+
+        else -> {
+            MyPohangNavigationType.LIST
+        }
+    }
+
+    when (navigationType) {
+        MyPohangNavigationType.LIST -> {
+            Scaffold(
+                topBar = {
+                    MyPohangTopAppBar(
+                        currentTitle = currentScreen.title,
+                        canNavigateBack = navController.previousBackStackEntry != null,
+                        navigateUp = {
+                            when (currentScreen.name) {
+                                PohangScreen.Recommend.name -> {
+                                    navController.popBackStack(
+                                        PohangScreen.Category.name,
+                                        inclusive = false
+                                    )
+                                }
+
+                                PohangScreen.RecommendDetail.name -> {
+                                    navController.popBackStack(
+                                        PohangScreen.Recommend.name,
+                                        inclusive = false
+                                    )
+                                }
+
+                                else -> {
+                                    navController.popBackStack()
+                                }
+                            }
+
+                        }
+                    )
+                },
+                modifier = modifier
+            ) { innerPadding ->
+
+                NavHost(
+                    navController = navController,
+                    startDestination = PohangScreen.Category.name,
+                    modifier = Modifier.padding(innerPadding)
+                ) {
+                    composable(route = PohangScreen.Category.name) {
+                        CategoryScreen(
+                            categoryList = categoryUiState.categories,
+                            modifier = Modifier.fillMaxWidth(),
+                            onCategoryClick = {
+                                categoryViewModel.selectCategory(it)
+                                recommendListViewModel.setSelectedCategory(it)
+                                recommendDetailViewModel.clearRecommend()
+                                navController.navigate(
+                                    PohangScreen.Recommend.name
+                                )
+                            },
+                            backHandler = {
+                                activity?.finish()
+                            }
                         )
-                    },
-                    label = { Text(stringResource(id = category.categoryName)) })
+                    }
+                    composable(route = PohangScreen.Recommend.name) {
+                        RecommendListScreen(
+                            recommendList = recommendListUIState.recommends,
+                            onRecommendClick = {
+                                recommendDetailViewModel.setRecommend(it)
+                                navController.navigate(
+                                    PohangScreen.RecommendDetail.name
+                                )
+                            },
+                            backHandler = {
+                                navController.popBackStack(
+                                    PohangScreen.Category.name,
+                                    inclusive = false
+                                )
+                            }
+                        )
+                    }
+
+                    composable(route = PohangScreen.RecommendDetail.name) {
+                        RecommendDetailScreen(
+                            recommend = recommendDetailUIState.recommend,
+                            backHandler = {
+                                navController.popBackStack(
+                                    PohangScreen.Recommend.name,
+                                    inclusive = false
+                                )
+                            }
+                        )
+                    }
+                }
             }
         }
 
-        NavHost(
-            navController = navController,
-            startDestination = PohangScreen.Recommend.name,
-            modifier = Modifier
-                .fillMaxSize()
-        ) {
-            composable(route = PohangScreen.Recommend.name) {
-                RecommendListAndDetail(
-                    recommendListUIState = recommendListUIState,
-                    recommendDetailViewModel = recommendDetailViewModel,
-                    recommendDetailUIState = recommendDetailUIState
-                )
+        MyPohangNavigationType.NAVIGATION_RAIL -> {
+            Row(modifier = modifier.fillMaxSize()) {
+                NavigationRail {
+                    categoryUiState.categories.forEach { category ->
+                        NavigationRailItem(
+                            selected = categoryUiState.selectedCategory == category,
+                            onClick = {
+                                categoryViewModel.selectCategory(category)
+                                recommendListViewModel.setSelectedCategory(category)
+                                recommendDetailViewModel.clearRecommend()
+                                navController.navigate(
+                                    PohangScreen.Recommend.name
+                                )
+                            },
+                            icon = {
+                                Icon(
+                                    painterResource(id = category.iconId),
+                                    contentDescription = null
+                                )
+                            },
+                            label = { Text(stringResource(id = category.categoryName)) })
+                    }
+                }
+
+                if (categoryUiState.selectedCategory != null) {
+                    RecommendListScreen(
+                        recommendList = recommendListUIState.recommends,
+                        onRecommendClick = {
+                            recommendDetailViewModel.setRecommend(it)
+                            navController.navigate(
+                                PohangScreen.RecommendDetail.name
+                            )
+                        },
+                        modifier = Modifier.weight(2f),
+                        backHandler = {
+                            categoryViewModel.clearCategory()
+                            navController.popBackStack(
+                                PohangScreen.Category.name,
+                                inclusive = false
+                            )
+                        }
+                    )
+                }
+
+                NavHost(
+                    navController = navController,
+                    startDestination = PohangScreen.Category.name,
+                    modifier = Modifier
+                        .weight(3f)
+                ) {
+                    composable(route = PohangScreen.Category.name) {
+                        Box { }
+                    }
+
+                    composable(route = PohangScreen.Recommend.name) {
+                        Box { }
+                    }
+
+                    composable(route = PohangScreen.RecommendDetail.name) {
+                        RecommendDetailScreen(
+                            recommend = recommendDetailUIState.recommend,
+                            modifier = Modifier.weight(3f),
+                            backHandler = {
+                                navController.popBackStack(
+                                    PohangScreen.Recommend.name,
+                                    inclusive = false
+                                )
+                            }
+                        )
+                    }
+                }
             }
         }
 
-//        NavHost(
-//            navController = navController,
-//            startDestination = PohangScreen.RecommendDetail.name,
-//            modifier = Modifier
-//                .weight(3f)
-//                .fillMaxHeight()
-//        ) {
-//            composable(route = PohangScreen.RecommendDetail.name) {
-//                RecommendDetailScreen(recommend = recommendDetailUIState.recommend)
-//            }
-//        }
+        MyPohangNavigationType.PERMANENT_NAVIGATION_DRAWER -> {
+            Row(modifier = modifier.fillMaxSize()) {
+                NavigationRail {
+                    categoryUiState.categories.forEach { category ->
+                        NavigationRailItem(
+                            selected = categoryUiState.selectedCategory == category,
+                            onClick = {
+                                categoryViewModel.selectCategory(category)
+                                recommendListViewModel.setSelectedCategory(category)
+                                recommendDetailViewModel.clearRecommend()
+                                navController.navigate(
+                                    PohangScreen.Recommend.name
+                                )
+                            },
+                            icon = {
+                                Icon(
+                                    painterResource(id = category.iconId),
+                                    contentDescription = null
+                                )
+                            },
+                            label = { Text(stringResource(id = category.categoryName)) })
+                    }
+                }
+
+                if (categoryUiState.selectedCategory != null) {
+                    RecommendListScreen(
+                        recommendList = recommendListUIState.recommends,
+                        onRecommendClick = {
+                            recommendDetailViewModel.setRecommend(it)
+                            navController.navigate(
+                                PohangScreen.RecommendDetail.name
+                            )
+                        },
+                        modifier = Modifier.weight(2f),
+                        backHandler = {
+                            categoryViewModel.clearCategory()
+                            navController.popBackStack(
+                                PohangScreen.Category.name,
+                                inclusive = false
+                            )
+                        }
+                    )
+                }
+
+                NavHost(
+                    navController = navController,
+                    startDestination = PohangScreen.Category.name,
+                    modifier = Modifier
+                        .weight(3f)
+                ) {
+
+                    composable(route = PohangScreen.Category.name) {
+                        Box {
+                            BackHandler {
+                                activity?.finish()
+                            }
+                        }
+
+                    }
+
+                    composable(route = PohangScreen.Recommend.name) {
+                        Box {
+
+                        }
+                    }
+
+                    composable(route = PohangScreen.RecommendDetail.name) {
+                        RecommendDetailScreen(
+                            recommend = recommendDetailUIState.recommend,
+                            modifier = Modifier.weight(3f),
+                            backHandler = {
+                                navController.popBackStack(
+                                    PohangScreen.Recommend.name,
+                                    inclusive = false
+                                )
+                            }
+                        )
+                    }
+                }
+            }
+        }
     }
-
-
-//    Scaffold(
-//        topBar = {
-//            MyPohangTopAppBar(
-//                currentTitle = currentScreen.title,
-//                canNavigateBack = navController.previousBackStackEntry != null,
-//                navigateUp = { navController.popBackStack() }
-//            )
-//        },
-//        modifier = modifier
-//    ) { innerPadding ->
-//
-//        NavHost(
-//            navController = navController,
-//            startDestination = PohangScreen.Category.name,
-//            modifier = Modifier.padding(innerPadding)
-//        ) {
-//            composable(route = PohangScreen.Category.name) {
-//                CategoryScreen(
-//                    categoryList = categoryUiState.categories,
-//                    modifier = Modifier.fillMaxWidth(),
-//                    onCategoryClick = {
-//                        categoryViewModel.selectCategory(it)
-//                        recommendListViewModel.setSelectedCategory(it)
-//                        recommendDetailViewModel.clearRecommend()
-//                        navController.navigate(
-//                            PohangScreen.Recommend.name
-//                        )
-//                    }
-//                )
-//            }
-//            composable(route = PohangScreen.Recommend.name) {
-//                RecommendListScreen(
-//                    recommendList = recommendListUIState.recommends,
-//                    onRecommendClick = {
-//                        recommendDetailViewModel.setRecommend(it)
-//                        navController.navigate(
-//                            PohangScreen.RecommendDetail.name
-//                        )
-//                    }
-//                )
-//            }
-//
-//            composable(route = PohangScreen.RecommendDetail.name) {
-//                RecommendDetailScreen(recommend = recommendDetailUIState.recommend)
-//            }
-//        }
-//    }
 }
 
-@Composable
-private fun RecommendListAndDetail(
-    modifier: Modifier = Modifier,
-    recommendListUIState: RecommendListUIState,
-    recommendDetailViewModel: RecommendDetailViewModel,
-    recommendDetailUIState: RecommendDetailUIState
-) {
-    val navController = rememberNavController()
-    Row(modifier = modifier) {
-        RecommendListScreen(
-            recommendList = recommendListUIState.recommends,
-            onRecommendClick = {
-                recommendDetailViewModel.setRecommend(it)
-            },
-            modifier = Modifier.weight(2f)
-        )
-
-        NavHost(
-            navController = navController,
-            startDestination = PohangScreen.RecommendDetail.name,
-            modifier = Modifier.weight(3f)
-        ) {
-            composable(route = PohangScreen.RecommendDetail.name) {
-                RecommendDetailScreen(recommend = recommendDetailUIState.recommend)
-            }
-        }
-    }
-}
 
 @Composable
 private fun CategoryScreen(
     modifier: Modifier = Modifier,
     categoryList: List<Category>,
-    onCategoryClick: (Category) -> Unit
+    onCategoryClick: (Category) -> Unit,
+    backHandler: () -> Unit
 ) {
+    BackHandler {
+        backHandler()
+    }
+
     LazyColumn(modifier = modifier) {
         items(categoryList) { category ->
             Row(
@@ -262,6 +414,6 @@ private fun MyPohangTopAppBar(
 @Composable
 fun MyPohangAppPreview() {
     MyPohangAppTheme {
-        MyPohangApp()
+        MyPohangApp(windowSize = WindowWidthSizeClass.Compact)
     }
 }
