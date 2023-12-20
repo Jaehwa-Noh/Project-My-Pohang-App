@@ -1,5 +1,6 @@
 package com.example.mypohangapp.ui
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
@@ -28,8 +29,14 @@ import com.example.mypohangapp.ui.theme.MyPohangAppTheme
 fun RecommendListScreen(
     modifier: Modifier = Modifier,
     recommendList: List<Recommend>,
-    onRecommendClick: (Recommend) -> Unit
+    onRecommendClick: (Recommend) -> Unit,
+    backHandler: () -> Unit
 ) {
+
+    BackHandler {
+        backHandler()
+    }
+
     LazyColumn(
         modifier = modifier
             .fillMaxWidth()
@@ -78,6 +85,8 @@ fun RecommendListPreview() {
     MyPohangAppTheme {
         RecommendListScreen(
             recommendList = CategoryAndRecommendRepository.recommends,
-            onRecommendClick = {})
+            onRecommendClick = {},
+            backHandler = {}
+        )
     }
 }

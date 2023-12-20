@@ -1,5 +1,6 @@
 package com.example.mypohangapp.ui
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -25,8 +26,12 @@ import com.example.mypohangapp.ui.theme.MyPohangAppTheme
 @Composable
 fun RecommendDetailScreen(
     modifier: Modifier = Modifier,
-    recommend: Recommend?
+    recommend: Recommend?,
+    backHandler: () -> Unit
 ) {
+    BackHandler {
+        backHandler()
+    }
 
     if (recommend != null) {
         Column(
@@ -87,7 +92,8 @@ private fun RecommendDetailTextArea(
 fun RecommendDetailPreView() {
     MyPohangAppTheme {
         RecommendDetailScreen(
-            recommend = CategoryAndRecommendRepository.recommends[0]
+            recommend = CategoryAndRecommendRepository.recommends[0],
+            backHandler = {}
         )
     }
 }
