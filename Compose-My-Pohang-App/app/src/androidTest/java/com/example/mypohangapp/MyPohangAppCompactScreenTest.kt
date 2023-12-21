@@ -5,10 +5,13 @@ import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
 import androidx.test.espresso.Espresso
+import com.example.mypohangapp.data.CategoryAndRecommendRepository
+import com.example.mypohangapp.model.CategoryType
 import com.example.mypohangapp.ui.MyPohangApp
 import com.example.mypohangapp.ui.PohangScreen
 import org.junit.Before
@@ -51,11 +54,34 @@ class MyPohangAppCompactScreenTest {
 
     @Test
     @TestCompactWidth
+    fun compactDevice_CategoryScreen_VerifyContent() {
+        val categories = CategoryAndRecommendRepository.categories
+        categories.forEach { category ->
+            composeTestRule.onNodeWithStringId(category.categoryName)
+                .assertIsDisplayed()
+        }
+    }
+
+    @Test
+    @TestCompactWidth
     fun compactDevice_ClickCategory_NavigatesToRecommendScreen() {
         navigateCoffeeToRecommendScreen(composeTestRule)
         navController.assertCurrentRouteName(PohangScreen.Recommend.name)
         composeTestRule.onNodeWithStringId(R.string.recommend_1_title)
             .assertIsDisplayed()
+    }
+
+    @Test
+    @TestCompactWidth
+    fun compactDevice_RecommendScreen_VerifyContent() {
+        navigateCoffeeToRecommendScreen(composeTestRule)
+        val recommends = CategoryAndRecommendRepository.recommends
+        recommends.filter {
+            it.categoryType == CategoryType.CoffeeShop
+        }.forEach {
+            composeTestRule.onNodeWithStringId(it.name)
+                .assertIsDisplayed()
+        }
     }
 
     @Test
@@ -76,6 +102,28 @@ class MyPohangAppCompactScreenTest {
         navController.assertCurrentRouteName(PohangScreen.RecommendDetail.name)
         composeTestRule.onNodeWithStringId(R.string.recommend_detail)
             .assertIsDisplayed()
+    }
+
+    @Test
+    @TestCompactWidth
+    fun compactDevice_RecommendDetailScreen_VerifyContent() {
+        navigateRecommendToDetailScreen(composeTestRule)
+        val recommends = CategoryAndRecommendRepository.recommends
+        recommends.filter {
+            it.name == R.string.recommend_1_title
+        }.forEach {
+            composeTestRule.onNodeWithStringId(it.name)
+                .assertIsDisplayed()
+            composeTestRule.onNodeWithStringId(it.location)
+                .assertIsDisplayed()
+            composeTestRule.onNodeWithStringId(it.information)
+                .assertIsDisplayed()
+            composeTestRule.onNodeWithTag(
+                composeTestRule.tag(R.string.test_tag_detail_picture)
+            ).assertIsDisplayed()
+            composeTestRule.onNodeWithStringId(it.source)
+                .assertExists()
+        }
     }
 
     @Test
