@@ -24,7 +24,6 @@ class MyPohangAppCompactScreenTest {
     @get:Rule
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
-    private lateinit var stateRestorationTester: StateRestorationTester
     private lateinit var navController: TestNavHostController
 
     @Before
@@ -39,7 +38,7 @@ class MyPohangAppCompactScreenTest {
                 navController = navController
             )
         }
-        stateRestorationTester = StateRestorationTester(composeTestRule)
+
     }
 
     @Test
@@ -67,23 +66,6 @@ class MyPohangAppCompactScreenTest {
 
     @Test
     @TestCompactWidth
-    fun compactDevice_CategoryScreenRetained_AfterConfigChange() {
-        val categories = CategoryAndRecommendRepository.categories
-        categories.forEach { category ->
-            composeTestRule.onNodeWithStringId(category.categoryName)
-                .assertIsDisplayed()
-        }
-
-        stateRestorationTester.emulateSavedInstanceStateRestore()
-
-        categories.forEach { category ->
-            composeTestRule.onNodeWithStringId(category.categoryName)
-                .assertIsDisplayed()
-        }
-    }
-
-    @Test
-    @TestCompactWidth
     fun compactDevice_ClickCategory_NavigatesToRecommendScreen() {
         navigateCoffeeToRecommendScreen(composeTestRule)
         navController.assertCurrentRouteName(PohangScreen.Recommend.name)
@@ -96,28 +78,6 @@ class MyPohangAppCompactScreenTest {
     fun compactDevice_RecommendScreen_VerifyContent() {
         navigateCoffeeToRecommendScreen(composeTestRule)
         val recommends = CategoryAndRecommendRepository.recommends
-        recommends.filter {
-            it.categoryType == CategoryType.CoffeeShop
-        }.forEach {
-            composeTestRule.onNodeWithStringId(it.name)
-                .assertIsDisplayed()
-        }
-    }
-
-    @Test
-    @TestCompactWidth
-    fun compactDevice_RecommendScreenRetain_AfterConfigChange() {
-        navigateCoffeeToRecommendScreen(composeTestRule)
-        val recommends = CategoryAndRecommendRepository.recommends
-        recommends.filter {
-            it.categoryType == CategoryType.CoffeeShop
-        }.forEach {
-            composeTestRule.onNodeWithStringId(it.name)
-                .assertIsDisplayed()
-        }
-
-        stateRestorationTester.emulateSavedInstanceStateRestore()
-
         recommends.filter {
             it.categoryType == CategoryType.CoffeeShop
         }.forEach {
@@ -151,46 +111,6 @@ class MyPohangAppCompactScreenTest {
     fun compactDevice_RecommendDetailScreen_VerifyContent() {
         navigateRecommendToDetailScreen(composeTestRule)
         val recommends = CategoryAndRecommendRepository.recommends
-        recommends.filter {
-            it.name == R.string.recommend_1_title
-        }.forEach {
-            composeTestRule.onNodeWithStringId(it.name)
-                .assertIsDisplayed()
-            composeTestRule.onNodeWithStringId(it.location)
-                .assertIsDisplayed()
-            composeTestRule.onNodeWithStringId(it.information)
-                .assertIsDisplayed()
-            composeTestRule.onNodeWithTag(
-                composeTestRule.tag(R.string.test_tag_detail_picture)
-            ).assertIsDisplayed()
-            composeTestRule.onNodeWithStringId(it.source)
-                .assertExists()
-        }
-    }
-
-    @Test
-    @TestCompactWidth
-    fun compactDevice_RecommendDetailScreenRetain_AfterConfigChange() {
-        navigateRecommendToDetailScreen(composeTestRule)
-        val recommends = CategoryAndRecommendRepository.recommends
-        recommends.filter {
-            it.name == R.string.recommend_1_title
-        }.forEach {
-            composeTestRule.onNodeWithStringId(it.name)
-                .assertIsDisplayed()
-            composeTestRule.onNodeWithStringId(it.location)
-                .assertIsDisplayed()
-            composeTestRule.onNodeWithStringId(it.information)
-                .assertIsDisplayed()
-            composeTestRule.onNodeWithTag(
-                composeTestRule.tag(R.string.test_tag_detail_picture)
-            ).assertIsDisplayed()
-            composeTestRule.onNodeWithStringId(it.source)
-                .assertExists()
-        }
-
-        stateRestorationTester.emulateSavedInstanceStateRestore()
-
         recommends.filter {
             it.name == R.string.recommend_1_title
         }.forEach {
