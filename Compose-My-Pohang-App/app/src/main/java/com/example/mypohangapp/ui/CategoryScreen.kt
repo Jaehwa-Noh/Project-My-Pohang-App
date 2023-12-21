@@ -31,6 +31,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -53,9 +54,9 @@ enum class PohangScreen(@StringRes val title: Int) {
 @Composable
 fun MyPohangApp(
     modifier: Modifier = Modifier,
+    navController: NavHostController = rememberNavController(),
     windowSize: WindowWidthSizeClass
 ) {
-    val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = PohangScreen.valueOf(
         backStackEntry?.destination?.route ?: PohangScreen.Category.name
