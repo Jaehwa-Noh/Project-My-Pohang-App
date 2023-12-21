@@ -344,7 +344,7 @@ fun MyPohangApp(
 
 
 @Composable
-private fun CategoryScreen(
+fun CategoryScreen(
     modifier: Modifier = Modifier,
     categoryList: List<Category>,
     onCategoryClick: (Category) -> Unit,
