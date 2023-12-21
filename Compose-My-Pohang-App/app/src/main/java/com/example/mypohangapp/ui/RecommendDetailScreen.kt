@@ -66,6 +66,7 @@ private fun RecommendDetailTextArea(
         modifier = modifier
             .verticalScroll(rememberScrollState())
             .padding(8.dp)
+            .testTag(stringResource(R.string.test_tag_recommend_detail_text_area))
     ) {
         Text(
             stringResource(id = recommend.name),
