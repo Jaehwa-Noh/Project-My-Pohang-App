@@ -86,5 +86,5 @@
     <string name="category">카테고리</string>
     <string name="recommend">추천</string>
     <string name="recommend_detail">상세</string>
-    <string name="back_button">Back</string>
+    <string name="back_button">뒤로</string>
 </resources>
