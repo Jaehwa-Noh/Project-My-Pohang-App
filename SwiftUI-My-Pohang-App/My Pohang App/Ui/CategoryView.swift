@@ -16,12 +16,14 @@ struct CategoryView: View {
                 ForEach(categoryViewModel.categories) {
                     category in
                     NavigationLink {
-                        RecommendView(category: categoryViewModel.selectedCategory)
+                        RecommendView(category: category)
+                            
                     } label: {
                         HStack {
                             Image(systemName: category.iconName)
                             Text("\(category.categoryName)")
                         }
+                        
                     }
                 }
             }
