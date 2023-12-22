@@ -2,18 +2,13 @@ package com.example.mypohangapp
 
 import androidx.activity.ComponentActivity
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
-import androidx.compose.ui.test.assertAny
 import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.StateRestorationTester
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.onChildren
-import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
 import com.example.mypohangapp.data.CategoryAndRecommendRepository
 import com.example.mypohangapp.model.CategoryType
-import com.example.mypohangapp.model.Recommend
 import com.example.mypohangapp.ui.MyPohangApp
 import org.junit.Rule
 import org.junit.Test
@@ -91,7 +86,7 @@ class MyPohangAppStateRestorationTest {
         recommends.filter {
             it.name == R.string.recommend_1_title
         }.forEach {
-            checkAllNodeInRecommendDetail(it)
+            checkAllNodeInRecommendDetail(composeTestRule, it)
         }
 
         stateRestorationTester.emulateSavedInstanceStateRestore()
@@ -99,7 +94,7 @@ class MyPohangAppStateRestorationTest {
         recommends.filter {
             it.name == R.string.recommend_1_title
         }.forEach {
-            checkAllNodeInRecommendDetail(it)
+            checkAllNodeInRecommendDetail(composeTestRule, it)
         }
     }
 
@@ -172,7 +167,7 @@ class MyPohangAppStateRestorationTest {
         recommends.filter {
             it.name == R.string.recommend_1_title
         }.forEach {
-            checkAllNodeInRecommendDetail(it)
+            checkAllNodeInRecommendDetail(composeTestRule, it)
         }
 
         stateRestorationTester.emulateSavedInstanceStateRestore()
@@ -180,7 +175,7 @@ class MyPohangAppStateRestorationTest {
         recommends.filter {
             it.name == R.string.recommend_1_title
         }.forEach {
-            checkAllNodeInRecommendDetail(it)
+            checkAllNodeInRecommendDetail(composeTestRule, it)
         }
     }
 
@@ -256,7 +251,7 @@ class MyPohangAppStateRestorationTest {
         recommends.filter {
             it.name == R.string.recommend_1_title
         }.forEach {
-            checkAllNodeInRecommendDetail(it)
+            checkAllNodeInRecommendDetail(composeTestRule, it)
         }
 
         stateRestorationTester.emulateSavedInstanceStateRestore()
@@ -264,34 +259,7 @@ class MyPohangAppStateRestorationTest {
         recommends.filter {
             it.name == R.string.recommend_1_title
         }.forEach {
-            checkAllNodeInRecommendDetail(it)
+            checkAllNodeInRecommendDetail(composeTestRule, it)
         }
     }
-
-    private fun checkAllNodeInRecommendDetail(recommend: Recommend) {
-        composeTestRule.onNodeWithTag(composeTestRule.tag(R.string.test_tag_recommend_detail_text_area))
-            .onChildren()
-            .assertAny(
-                hasText(
-                    composeTestRule.activity.getString(recommend.name)
-                )
-            )
-            .assertAny(
-                hasText(
-                    composeTestRule.activity.getString(recommend.location)
-                )
-            )
-            .assertAny(
-                hasText(
-                    composeTestRule.activity.getString(recommend.information)
-                )
-            )
-            .assertAny(
-                hasText(
-                    composeTestRule.activity.getString(recommend.source)
-                )
-            )
-        composeTestRule.onNodeWithTag(composeTestRule.tag(R.string.test_tag_detail_picture))
-    }
-
 }
