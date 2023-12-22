@@ -10,13 +10,13 @@ import SwiftUI
 struct MyPohangApp: View {
     var body: some View {
         NavigationSplitView {
-            Text("Split1")
+            CategoryView()
         } content: {
-            Text("Split2")
+            EmptyView()
         } detail: {
-            Text("Split3")
+            EmptyView()
         }
-
+        .navigationSplitViewStyle(.balanced)
     }
 }
 
