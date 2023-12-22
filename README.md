@@ -6,7 +6,7 @@ This main branch is the main directory.
 
 there are 2 additional branchs for 1 practice, Compose and SwiftUI.   
    
-• [Compose branch]   
+• [Compose branch](https://github.com/Jaehwa-Noh/Project-My-Pohang-App/tree/compose-my-pohang-app)   
 • [SwiftUI branch]   
 
 
@@ -17,7 +17,7 @@ there are 2 additional branchs for 1 practice, Compose and SwiftUI.
 
 1개의 연습에 해당하는 추가적인 컴포즈와 스위프트유아이에 해당하는 2개의 브랜치가 있습니다.   
    
-• [컴포즈 브랜치]   
+• [컴포즈 브랜치](https://github.com/Jaehwa-Noh/Project-My-Pohang-App/tree/compose-my-pohang-app)   
 • [스위프트유아이 브랜치]   
 
 
@@ -39,3 +39,28 @@ This app shows some place of these categories in my city Pohang:(이 앱은 포�
 
 ### Expaned size(큰 크기)
 <img src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/2d4a34f6-7c84-4905-b358-bcf5fde794ba" width="700" />
+
+
+# My Result (내 결과물)
+## Apps on device (프로젝트 실행 이미지)
+### Compose
+#### Compact (아담한)
+| Category(카테고리) | Recommend(추천) | Recommend detail(추천 상세) |
+| :---------------: | :---------------: | :---------------: |
+| <img width="150" alt="Compose Compact Category(컴포즈 아담한 카테고리)" src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/1bf2aaa0-6593-4156-b7d7-8390b80c9878"> | <img width="150" alt="Compose Compact Recommend(컴포즈 아담한 추천)" src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/c8f5ace3-2be9-4ae9-9077-e8feb6faeeac"> | <img width="150" alt="Compose Compact Recommend Detail(컴포즈 아담한 추천 상세)" src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/afa34cc9-f7ae-49cc-add7-d52c4bf2a3cf"> |
+
+#### Medium (중간)
+<img width="400" alt="Compose Medium(컴포즈 중간)" src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/0a971aee-7661-41ba-ad38-21adb695c494">
+
+
+#### Expanded (큰)
+<img width="600" alt="Compose Expanded(컴포즈 큰)" src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/06f63850-95df-4a31-b297-7f4f6e6bb47e">
+
+
+## Problem Solve (문제 해결)
+### Compose (컴포즈)
+#### Can not extract resource error (리소스 추출 문제)
+• [Can not extract resource from com.android.aaptcompiler.ParsedResource@1543b8e6.](https://shwoghk14.blogspot.com/2023/12/android-compose-can-not-extract.html)
+
+#### Has been compiled by a more recent version of the Java Runtime (class file version 63.0), this version of the Java Runtime only recognizes class file versions up to 61.0 (Java 런타임 버전 문제)
+• [Has been compiled by a more recent version of the Java Runtime (class file version 63.0), this version of the Java Runtime only recognizes class file versions up to 61.0](https://shwoghk14.blogspot.com/2023/12/android-compose-has-been-compiled-by.html)
