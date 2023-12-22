@@ -12,7 +12,7 @@
 		CFA9D73E2B35755600A8F326 /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D73D2B35755600A8F326 /* Recommend.swift */; };
 		CFA9D7402B35798000A8F326 /* CategoryAndRecommendRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D73F2B35798000A8F326 /* CategoryAndRecommendRepository.swift */; };
 		CFF6FDE32B3557DA003DE7DA /* My_Pohang_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF6FDE22B3557DA003DE7DA /* My_Pohang_AppApp.swift */; };
-		CFF6FDE52B3557DA003DE7DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF6FDE42B3557DA003DE7DA /* ContentView.swift */; };
+		CFF6FDE52B3557DA003DE7DA /* MyPohangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF6FDE42B3557DA003DE7DA /* MyPohangApp.swift */; };
 		CFF6FDE72B3557DB003DE7DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF6FDE62B3557DB003DE7DA /* Assets.xcassets */; };
 		CFF6FDEA2B3557DB003DE7DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF6FDE92B3557DB003DE7DA /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -24,7 +24,7 @@
 		CFA9D73F2B35798000A8F326 /* CategoryAndRecommendRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAndRecommendRepository.swift; sourceTree = "<group>"; };
 		CFF6FDDF2B3557DA003DE7DA /* My Pohang App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Pohang App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF6FDE22B3557DA003DE7DA /* My_Pohang_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Pohang_AppApp.swift; sourceTree = "<group>"; };
-		CFF6FDE42B3557DA003DE7DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CFF6FDE42B3557DA003DE7DA /* MyPohangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPohangApp.swift; sourceTree = "<group>"; };
 		CFF6FDE62B3557DB003DE7DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFF6FDE92B3557DB003DE7DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +58,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		CFA9D7412B359D1900A8F326 /* Ui */ = {
+			isa = PBXGroup;
+			children = (
+				CFF6FDE42B3557DA003DE7DA /* MyPohangApp.swift */,
+			);
+			path = Ui;
+			sourceTree = "<group>";
+		};
 		CFF6FDD62B3557DA003DE7DA = {
 			isa = PBXGroup;
 			children = (
@@ -77,10 +85,10 @@
 		CFF6FDE12B3557DA003DE7DA /* My Pohang App */ = {
 			isa = PBXGroup;
 			children = (
+				CFA9D7412B359D1900A8F326 /* Ui */,
 				CFA9D7382B3560E300A8F326 /* Data */,
 				CFA9D7372B355F7100A8F326 /* Model */,
 				CFF6FDE22B3557DA003DE7DA /* My_Pohang_AppApp.swift */,
-				CFF6FDE42B3557DA003DE7DA /* ContentView.swift */,
 				CFF6FDE62B3557DB003DE7DA /* Assets.xcassets */,
 				CFF6FDE82B3557DB003DE7DA /* Preview Content */,
 			);
@@ -167,7 +175,7 @@
 			files = (
 				CFA9D7402B35798000A8F326 /* CategoryAndRecommendRepository.swift in Sources */,
 				CFA9D73E2B35755600A8F326 /* Recommend.swift in Sources */,
-				CFF6FDE52B3557DA003DE7DA /* ContentView.swift in Sources */,
+				CFF6FDE52B3557DA003DE7DA /* MyPohangApp.swift in Sources */,
 				CFA9D73C2B35613800A8F326 /* CategoryUtils.swift in Sources */,
 				CFF6FDE32B3557DA003DE7DA /* My_Pohang_AppApp.swift in Sources */,
 				CFA9D73A2B35610600A8F326 /* Category.swift in Sources */,
