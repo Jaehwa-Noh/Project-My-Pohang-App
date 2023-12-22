@@ -10,6 +10,7 @@
 		CFA9D73A2B35610600A8F326 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D7392B35610600A8F326 /* Category.swift */; };
 		CFA9D73C2B35613800A8F326 /* CategoryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D73B2B35613800A8F326 /* CategoryUtils.swift */; };
 		CFA9D73E2B35755600A8F326 /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D73D2B35755600A8F326 /* Recommend.swift */; };
+		CFA9D7402B35798000A8F326 /* CategoryAndRecommendRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D73F2B35798000A8F326 /* CategoryAndRecommendRepository.swift */; };
 		CFF6FDE32B3557DA003DE7DA /* My_Pohang_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF6FDE22B3557DA003DE7DA /* My_Pohang_AppApp.swift */; };
 		CFF6FDE52B3557DA003DE7DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF6FDE42B3557DA003DE7DA /* ContentView.swift */; };
 		CFF6FDE72B3557DB003DE7DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF6FDE62B3557DB003DE7DA /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		CFA9D7392B35610600A8F326 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CFA9D73B2B35613800A8F326 /* CategoryUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUtils.swift; sourceTree = "<group>"; };
 		CFA9D73D2B35755600A8F326 /* Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
+		CFA9D73F2B35798000A8F326 /* CategoryAndRecommendRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAndRecommendRepository.swift; sourceTree = "<group>"; };
 		CFF6FDDF2B3557DA003DE7DA /* My Pohang App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Pohang App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF6FDE22B3557DA003DE7DA /* My_Pohang_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Pohang_AppApp.swift; sourceTree = "<group>"; };
 		CFF6FDE42B3557DA003DE7DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 		CFA9D7382B3560E300A8F326 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CFA9D73F2B35798000A8F326 /* CategoryAndRecommendRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA9D7402B35798000A8F326 /* CategoryAndRecommendRepository.swift in Sources */,
 				CFA9D73E2B35755600A8F326 /* Recommend.swift in Sources */,
 				CFF6FDE52B3557DA003DE7DA /* ContentView.swift in Sources */,
 				CFA9D73C2B35613800A8F326 /* CategoryUtils.swift in Sources */,
