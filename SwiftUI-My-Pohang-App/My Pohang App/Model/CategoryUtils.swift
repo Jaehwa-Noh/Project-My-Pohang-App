@@ -5,8 +5,6 @@
 //  Created by Jaehwa Noh on 12/22/23.
 //
 
-import Foundation
-
 enum CategoryType: String {
     case coffeeShop = "카페"
     case restaurants = "식당"
