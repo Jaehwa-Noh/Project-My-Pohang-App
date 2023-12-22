@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RecommendViewModel {
+class RecommendListViewModel {
     var selectedCategory: Category?
     var recommends: [Recommend] = []
     var selectedRecommend: Recommend?

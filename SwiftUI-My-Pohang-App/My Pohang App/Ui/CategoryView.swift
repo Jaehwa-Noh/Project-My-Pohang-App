@@ -16,7 +16,7 @@ struct CategoryView: View {
                 ForEach(categoryViewModel.categories) {
                     category in
                     NavigationLink {
-                        RecommendView(category: category)
+                        RecommendListView(category: category)
                             
                     } label: {
                         HStack {

@@ -7,21 +7,21 @@
 
 import SwiftUI
 
-struct RecommendView: View {
+struct RecommendListView: View {
     var category: Category
-    private var recommendViewModel: RecommendViewModel
+    private var recommendListViewModel: RecommendListViewModel
     
     init(category: Category) {
         self.category = category
-        self.recommendViewModel = RecommendViewModel()
-        recommendViewModel.setSelectedCategory(category: category)
+        self.recommendListViewModel = RecommendListViewModel()
+        recommendListViewModel.setSelectedCategory(category: category)
     }
     
     var body: some View {
         ZStack {
             ScrollView {
                 LazyVStack(alignment: .leading) {
-                    ForEach(recommendViewModel.recommends) {
+                    ForEach(recommendListViewModel.recommends) {
                         recommend in
                         RecommendListItem(recommend: recommend)
                     }
@@ -50,5 +50,5 @@ struct RecommendListItem: View {
 }
 
 #Preview {
-    RecommendView(category: CategoryAndRecommendRepository().categories[0])
+    RecommendListView(category: CategoryAndRecommendRepository().categories[0])
 }
