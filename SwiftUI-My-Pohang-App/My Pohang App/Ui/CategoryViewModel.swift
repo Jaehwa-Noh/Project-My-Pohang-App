@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CategoryViewModel: ObservableObject {
+class CategoryViewModel {
     var categories: [Category]
     var selectedCategory: Category? = nil
     

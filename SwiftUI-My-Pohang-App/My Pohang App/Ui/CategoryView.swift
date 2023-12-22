@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategoryView: View {
-    @StateObject private var categoryViewModel = CategoryViewModel()
+    private var categoryViewModel = CategoryViewModel()
     
     var body: some View {
         Form {
