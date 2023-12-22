@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct CategoryView: View {
+    @StateObject private var categoryViewModel = CategoryViewModel()
+    
     var body: some View {
         Form {
             Section {
-                ForEach(CategoryAndRecommendRepository().categories) {
+                ForEach(categoryViewModel.categories) {
                     category in
                     NavigationLink {
-                        
+                        RecommendView(category: categoryViewModel.selectedCategory)
                     } label: {
                         HStack {
                             Image(systemName: category.iconName)
