@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecommendView: View {
-    var category: Category
+    var category: Category?
     
     
     
