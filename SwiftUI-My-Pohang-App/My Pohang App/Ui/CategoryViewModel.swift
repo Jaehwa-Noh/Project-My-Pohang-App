@@ -9,17 +9,8 @@ import Foundation
 
 class CategoryViewModel {
     var categories: [Category]
-    var selectedCategory: Category? = nil
     
     init() {
         self.categories = CategoryAndRecommendRepository().categories
-    }
-    
-    func selectCategory(category: Category) {
-        selectedCategory = category
-    }
-    
-    func clearCategory() {
-        selectedCategory = nil
     }
 }
