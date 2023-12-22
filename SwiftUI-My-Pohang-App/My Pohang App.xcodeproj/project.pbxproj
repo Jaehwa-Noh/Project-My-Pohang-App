@@ -15,6 +15,7 @@
 		CFA9D7452B35B88000A8F326 /* RecommendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D7442B35B88000A8F326 /* RecommendListView.swift */; };
 		CFA9D7472B35B8EE00A8F326 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D7462B35B8EE00A8F326 /* CategoryViewModel.swift */; };
 		CFA9D7492B35BBB500A8F326 /* RecommendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D7482B35BBB500A8F326 /* RecommendListViewModel.swift */; };
+		CFA9D74B2B35CC5B00A8F326 /* RecommendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D74A2B35CC5B00A8F326 /* RecommendDetailView.swift */; };
 		CFF6FDE32B3557DA003DE7DA /* My_Pohang_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF6FDE22B3557DA003DE7DA /* My_Pohang_AppApp.swift */; };
 		CFF6FDE52B3557DA003DE7DA /* MyPohangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF6FDE42B3557DA003DE7DA /* MyPohangApp.swift */; };
 		CFF6FDE72B3557DB003DE7DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF6FDE62B3557DB003DE7DA /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		CFA9D7442B35B88000A8F326 /* RecommendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListView.swift; sourceTree = "<group>"; };
 		CFA9D7462B35B8EE00A8F326 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		CFA9D7482B35BBB500A8F326 /* RecommendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListViewModel.swift; sourceTree = "<group>"; };
+		CFA9D74A2B35CC5B00A8F326 /* RecommendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendDetailView.swift; sourceTree = "<group>"; };
 		CFF6FDDF2B3557DA003DE7DA /* My Pohang App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Pohang App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF6FDE22B3557DA003DE7DA /* My_Pohang_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Pohang_AppApp.swift; sourceTree = "<group>"; };
 		CFF6FDE42B3557DA003DE7DA /* MyPohangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPohangApp.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				CFA9D7462B35B8EE00A8F326 /* CategoryViewModel.swift */,
 				CFA9D7442B35B88000A8F326 /* RecommendListView.swift */,
 				CFA9D7482B35BBB500A8F326 /* RecommendListViewModel.swift */,
+				CFA9D74A2B35CC5B00A8F326 /* RecommendDetailView.swift */,
 			);
 			path = Ui;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				CFA9D7452B35B88000A8F326 /* RecommendListView.swift in Sources */,
 				CFF6FDE52B3557DA003DE7DA /* MyPohangApp.swift in Sources */,
 				CFA9D73C2B35613800A8F326 /* CategoryUtils.swift in Sources */,
+				CFA9D74B2B35CC5B00A8F326 /* RecommendDetailView.swift in Sources */,
 				CFF6FDE32B3557DA003DE7DA /* My_Pohang_AppApp.swift in Sources */,
 				CFA9D7472B35B8EE00A8F326 /* CategoryViewModel.swift in Sources */,
 				CFA9D73A2B35610600A8F326 /* Category.swift in Sources */,
