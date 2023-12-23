@@ -16,11 +16,29 @@
 		CFA9D7472B35B8EE00A8F326 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D7462B35B8EE00A8F326 /* CategoryViewModel.swift */; };
 		CFA9D7492B35BBB500A8F326 /* RecommendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D7482B35BBB500A8F326 /* RecommendListViewModel.swift */; };
 		CFA9D74B2B35CC5B00A8F326 /* RecommendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D74A2B35CC5B00A8F326 /* RecommendDetailView.swift */; };
+		CFB119FE2B369F6D0054071E /* RecommendListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB119FD2B369F6D0054071E /* RecommendListViewModelTest.swift */; };
 		CFF6FDE32B3557DA003DE7DA /* My_Pohang_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF6FDE22B3557DA003DE7DA /* My_Pohang_AppApp.swift */; };
 		CFF6FDE52B3557DA003DE7DA /* MyPohangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF6FDE42B3557DA003DE7DA /* MyPohangApp.swift */; };
 		CFF6FDE72B3557DB003DE7DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF6FDE62B3557DB003DE7DA /* Assets.xcassets */; };
 		CFF6FDEA2B3557DB003DE7DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF6FDE92B3557DB003DE7DA /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFB119FF2B369F6D0054071E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFF6FDD72B3557DA003DE7DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFF6FDDE2B3557DA003DE7DA;
+			remoteInfo = "My Pohang App";
+		};
+		CFB11A0E2B369F7F0054071E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFF6FDD72B3557DA003DE7DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFF6FDDE2B3557DA003DE7DA;
+			remoteInfo = "My Pohang App";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CFA9D7392B35610600A8F326 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -32,6 +50,9 @@
 		CFA9D7462B35B8EE00A8F326 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		CFA9D7482B35BBB500A8F326 /* RecommendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListViewModel.swift; sourceTree = "<group>"; };
 		CFA9D74A2B35CC5B00A8F326 /* RecommendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendDetailView.swift; sourceTree = "<group>"; };
+		CFB119FB2B369F6D0054071E /* My Pohang AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My Pohang AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFB119FD2B369F6D0054071E /* RecommendListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListViewModelTest.swift; sourceTree = "<group>"; };
+		CFB11A082B369F7F0054071E /* My Pohang AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My Pohang AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF6FDDF2B3557DA003DE7DA /* My Pohang App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Pohang App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF6FDE22B3557DA003DE7DA /* My_Pohang_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Pohang_AppApp.swift; sourceTree = "<group>"; };
 		CFF6FDE42B3557DA003DE7DA /* MyPohangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPohangApp.swift; sourceTree = "<group>"; };
@@ -40,6 +61,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CFB119F82B369F6D0054071E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFB11A052B369F7F0054071E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFF6FDDC2B3557DA003DE7DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,10 +116,27 @@
 			path = Ui;
 			sourceTree = "<group>";
 		};
+		CFB119FC2B369F6D0054071E /* My Pohang AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFB119FD2B369F6D0054071E /* RecommendListViewModelTest.swift */,
+			);
+			path = "My Pohang AppTests";
+			sourceTree = "<group>";
+		};
+		CFB11A092B369F7F0054071E /* My Pohang AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "My Pohang AppUITests";
+			sourceTree = "<group>";
+		};
 		CFF6FDD62B3557DA003DE7DA = {
 			isa = PBXGroup;
 			children = (
 				CFF6FDE12B3557DA003DE7DA /* My Pohang App */,
+				CFB119FC2B369F6D0054071E /* My Pohang AppTests */,
+				CFB11A092B369F7F0054071E /* My Pohang AppUITests */,
 				CFF6FDE02B3557DA003DE7DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				CFF6FDDF2B3557DA003DE7DA /* My Pohang App.app */,
+				CFB119FB2B369F6D0054071E /* My Pohang AppTests.xctest */,
+				CFB11A082B369F7F0054071E /* My Pohang AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,6 +175,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CFB119FA2B369F6D0054071E /* My Pohang AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFB11A032B369F6D0054071E /* Build configuration list for PBXNativeTarget "My Pohang AppTests" */;
+			buildPhases = (
+				CFB119F72B369F6D0054071E /* Sources */,
+				CFB119F82B369F6D0054071E /* Frameworks */,
+				CFB119F92B369F6D0054071E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFB11A002B369F6D0054071E /* PBXTargetDependency */,
+			);
+			name = "My Pohang AppTests";
+			productName = "My Pohang AppTests";
+			productReference = CFB119FB2B369F6D0054071E /* My Pohang AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CFB11A072B369F7F0054071E /* My Pohang AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFB11A102B369F7F0054071E /* Build configuration list for PBXNativeTarget "My Pohang AppUITests" */;
+			buildPhases = (
+				CFB11A042B369F7F0054071E /* Sources */,
+				CFB11A052B369F7F0054071E /* Frameworks */,
+				CFB11A062B369F7F0054071E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFB11A0F2B369F7F0054071E /* PBXTargetDependency */,
+			);
+			name = "My Pohang AppUITests";
+			productName = "My Pohang AppUITests";
+			productReference = CFB11A082B369F7F0054071E /* My Pohang AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		CFF6FDDE2B3557DA003DE7DA /* My Pohang App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFF6FDED2B3557DB003DE7DA /* Build configuration list for PBXNativeTarget "My Pohang App" */;
@@ -145,9 +235,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					CFB119FA2B369F6D0054071E = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = CFF6FDDE2B3557DA003DE7DA;
+					};
+					CFB11A072B369F7F0054071E = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = CFF6FDDE2B3557DA003DE7DA;
+					};
 					CFF6FDDE2B3557DA003DE7DA = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -167,11 +265,27 @@
 			projectRoot = "";
 			targets = (
 				CFF6FDDE2B3557DA003DE7DA /* My Pohang App */,
+				CFB119FA2B369F6D0054071E /* My Pohang AppTests */,
+				CFB11A072B369F7F0054071E /* My Pohang AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CFB119F92B369F6D0054071E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFB11A062B369F7F0054071E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFF6FDDD2B3557DA003DE7DA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,6 +298,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CFB119F72B369F6D0054071E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFB119FE2B369F6D0054071E /* RecommendListViewModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFB11A042B369F7F0054071E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFF6FDDB2B3557DA003DE7DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,7 +333,94 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CFB11A002B369F6D0054071E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFF6FDDE2B3557DA003DE7DA /* My Pohang App */;
+			targetProxy = CFB119FF2B369F6D0054071E /* PBXContainerItemProxy */;
+		};
+		CFB11A0F2B369F7F0054071E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFF6FDDE2B3557DA003DE7DA /* My Pohang App */;
+			targetProxy = CFB11A0E2B369F7F0054071E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		CFB11A012B369F6D0054071E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6H64278R9T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "example.sample.My-Pohang-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/My Pohang App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/My Pohang App";
+			};
+			name = Debug;
+		};
+		CFB11A022B369F6D0054071E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6H64278R9T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "example.sample.My-Pohang-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/My Pohang App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/My Pohang App";
+			};
+			name = Release;
+		};
+		CFB11A112B369F7F0054071E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6H64278R9T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "example.sample.My-Pohang-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "My Pohang App";
+			};
+			name = Debug;
+		};
+		CFB11A122B369F7F0054071E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6H64278R9T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "example.sample.My-Pohang-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "My Pohang App";
+			};
+			name = Release;
+		};
 		CFF6FDEB2B3557DB003DE7DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -387,6 +603,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CFB11A032B369F6D0054071E /* Build configuration list for PBXNativeTarget "My Pohang AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFB11A012B369F6D0054071E /* Debug */,
+				CFB11A022B369F6D0054071E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFB11A102B369F7F0054071E /* Build configuration list for PBXNativeTarget "My Pohang AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFB11A112B369F7F0054071E /* Debug */,
+				CFB11A122B369F7F0054071E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CFF6FDDA2B3557DA003DE7DA /* Build configuration list for PBXProject "My Pohang App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
