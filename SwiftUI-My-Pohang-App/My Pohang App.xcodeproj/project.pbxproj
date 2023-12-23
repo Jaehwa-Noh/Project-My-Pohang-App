@@ -47,6 +47,9 @@
 /* Begin PBXFileReference section */
 		CFA30D492B36CF2D00C161A6 /* MyPohangAppViewRegular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPohangAppViewRegular.swift; sourceTree = "<group>"; };
 		CFA30D4B2B36CFB200C161A6 /* NavigationNavigates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationNavigates.swift; sourceTree = "<group>"; };
+		CFA30D512B36E3DD00C161A6 /* MyPohangTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MyPohangTest.xctestplan; sourceTree = SOURCE_ROOT; };
+		CFA30D532B36EFBE00C161A6 /* iPadTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = iPadTest.xctestplan; path = ../iPadTest.xctestplan; sourceTree = "<group>"; };
+		CFA30D542B36F07500C161A6 /* iPhoneTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPhoneTest.xctestplan; sourceTree = "<group>"; };
 		CFA9D7392B35610600A8F326 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CFA9D73B2B35613800A8F326 /* CategoryUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUtils.swift; sourceTree = "<group>"; };
 		CFA9D73D2B35755600A8F326 /* Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
@@ -146,6 +149,9 @@
 		CFF6FDD62B3557DA003DE7DA = {
 			isa = PBXGroup;
 			children = (
+				CFA30D542B36F07500C161A6 /* iPhoneTest.xctestplan */,
+				CFA30D512B36E3DD00C161A6 /* MyPohangTest.xctestplan */,
+				CFA30D532B36EFBE00C161A6 /* iPadTest.xctestplan */,
 				CFF6FDE12B3557DA003DE7DA /* My Pohang App */,
 				CFB119FC2B369F6D0054071E /* My Pohang AppTests */,
 				CFB11A1F2B36BEE90054071E /* My Pohang AppUITests */,
