@@ -8,11 +8,53 @@
 import SwiftUI
 
 struct RecommendDetailView: View {
+    let recommend: Recommend?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if recommend != nil {
+            GeometryReader { geometry in
+                VStack {
+                    Image(recommend!.picture)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: geometry.size.width, height: geometry.size.height / 3)
+                        .clipped()
+                    RecommendDetailTextAreaView(recommend: recommend!)
+                    Spacer()
+                }
+            }
+        } else {
+            EmptyView()
+        }
+    }
+}
+
+struct RecommendDetailTextAreaView: View {
+    let recommend: Recommend
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text("\(recommend.name)")
+                    .font(.title)
+                Spacer()
+                    .frame(height: 8)
+                Text("\(recommend.location)")
+                    .font(.subheadline)
+                Spacer()
+                    .frame(height: 8)
+                Text("\(recommend.information)")
+                    .font(.body)
+                Spacer()
+                    .frame(height: 8)
+                Text("\(recommend.source)")
+                    .font(.caption)
+            }
+            .padding(8)
+        }
     }
 }
 
 #Preview {
-    RecommendDetailView()
+    RecommendDetailView(
+        recommend: CategoryAndRecommendRepository().recommends[0])
 }
