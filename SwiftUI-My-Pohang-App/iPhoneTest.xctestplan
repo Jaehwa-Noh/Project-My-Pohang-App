@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "2A6BE4FE-BCDE-45BB-B91A-C7E51EE72985",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:My Pohang App.xcodeproj",
+        "identifier" : "CFB119FA2B369F6D0054071E",
+        "name" : "My Pohang AppTests"
+      }
+    },
+    {
+      "skippedTests" : [
+        "MyPohangAppViewRegular"
+      ],
+      "target" : {
+        "containerPath" : "container:My Pohang App.xcodeproj",
+        "identifier" : "CFB11A1D2B36BEE90054071E",
+        "name" : "My Pohang AppUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

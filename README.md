@@ -7,7 +7,7 @@ This main branch is the main directory.
 there are 2 additional branchs for 1 practice, Compose and SwiftUI.   
    
 • [Compose branch](https://github.com/Jaehwa-Noh/Project-My-Pohang-App/tree/compose-my-pohang-app)   
-• [SwiftUI branch]   
+• [SwiftUI branch](https://github.com/Jaehwa-Noh/Project-My-Pohang-App/tree/swiftui-my-pohang-app)   
 
 
 ---
@@ -18,7 +18,7 @@ there are 2 additional branchs for 1 practice, Compose and SwiftUI.
 1개의 연습에 해당하는 추가적인 컴포즈와 스위프트유아이에 해당하는 2개의 브랜치가 있습니다.   
    
 • [컴포즈 브랜치](https://github.com/Jaehwa-Noh/Project-My-Pohang-App/tree/compose-my-pohang-app)   
-• [스위프트유아이 브랜치]   
+• [스위프트유아이 브랜치](https://github.com/Jaehwa-Noh/Project-My-Pohang-App/tree/swiftui-my-pohang-app)   
 
 
 ## My Pohang App(내 포항 앱)
@@ -43,7 +43,7 @@ This app shows some place of these categories in my city Pohang:(이 앱은 포�
 
 # My Result (내 결과물)
 ## Apps on device (프로젝트 실행 이미지)
-### Compose
+### Compose (컴포즈)
 #### Compact (아담한)
 | Category(카테고리) | Recommend(추천) | Recommend detail(추천 상세) |
 | :---------------: | :---------------: | :---------------: |
@@ -55,6 +55,15 @@ This app shows some place of these categories in my city Pohang:(이 앱은 포�
 
 #### Expanded (큰)
 <img width="600" alt="Compose Expanded(컴포즈 큰)" src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/06f63850-95df-4a31-b297-7f4f6e6bb47e">
+
+### SwiftUI (스위피트유아이)
+#### Compact (아담한)
+| Category(카테고리) | Recommend(추천) | Recommend detail(추천 상세) |
+| :---------------: | :---------------: | :---------------: |
+| <img width="150" alt="SwiftUI Compact Category(스위프트유아이 아담한 카테고리)" src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/d0f638df-5299-45f2-b884-a27e4c287f68"> | <img width="150" alt="SwiftUI Compact Recommend(스위프트유아이 아담한 추천)" src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/b9a60bf2-33b8-4cc2-8a6e-b4efcd0cbce9"> | <img width="150" alt="SwiftUI Compact Recommend Detail(스위프트유아이 아담한 추천 상세)" src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/8a1db3d3-0551-419d-83e0-0e731ea7b64f"> |
+
+#### Regular (보통)
+<img width="600" alt="SwiftUI Expanded(스위프트유아이 큰)" src="https://github.com/Jaehwa-Noh/Project-My-Pohang-App/assets/48680511/93a953b5-e967-422a-8d88-b2d57b9b1d56">
 
 
 ## Problem Solve (문제 해결)
