@@ -5,7 +5,7 @@
 //  Created by Jaehwa Noh on 12/22/23.
 //
 
-struct Category: Identifiable {
+struct Category: Identifiable, Equatable {
     let category: CategoryType
     var categoryName: String {
         category.rawValue

@@ -5,7 +5,7 @@
 //  Created by Jaehwa Noh on 12/22/23.
 //
 
-struct Recommend: Identifiable {
+struct Recommend: Identifiable, Equatable {
     let categoryType: CategoryType
     let name: String
     let location: String
