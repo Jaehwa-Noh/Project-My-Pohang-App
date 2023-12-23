@@ -22,7 +22,7 @@ final class CategoryViewModelTest: XCTestCase {
         categoryViewModel = nil
     }
     
-    func test_CategoryViewModel_SetCategory_SetCategory() {
+    func test_CategoryViewModel_SetCategory_SetCategory() throws {
         XCTAssertEqual(categoryViewModel?.categories, CategoryAndRecommendRepository().categories)
     }
 

@@ -22,19 +22,19 @@ final class RecommendListViewModelTest: XCTestCase {
         self.recommendListViewModel = nil
     }
     
-    func test_RecommendListViewModel_SelectCategory_SetCategorySuccess() {
+    func test_RecommendListViewModel_SelectCategory_SetCategorySuccess() throws {
         recommendListViewModel?.setSelectedCategory(category: CategoryAndRecommendRepository().categories[0])
         XCTAssertNotNil(recommendListViewModel?.selectedCategory)
         XCTAssertEqual(recommendListViewModel?.selectedCategory, CategoryAndRecommendRepository().categories[0])
     }
     
-    func test_RecommendListViewModel_SelectCategory_SetCategoryFail() {
+    func test_RecommendListViewModel_SelectCategory_SetCategoryFail() throws {
         recommendListViewModel?.setSelectedCategory(category: CategoryAndRecommendRepository().categories[1])
         XCTAssertNotNil(recommendListViewModel?.selectedCategory)
         XCTAssertNotEqual(recommendListViewModel?.selectedCategory, CategoryAndRecommendRepository().categories[0])
     }
     
-    func test_RecommendListViewModel_SelectCategory_SetCategoryEdge() {
+    func test_RecommendListViewModel_SelectCategory_SetCategoryEdge() throws {
         CategoryAndRecommendRepository().categories.forEach { category in
             recommendListViewModel?.setSelectedCategory(category: category)
             XCTAssertNotNil(recommendListViewModel?.selectedCategory)
