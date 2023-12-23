@@ -35,25 +35,14 @@ final class MyPohangAppViewCompactTest: XCTestCase {
     }
     
     func test_CompactDevice_ClickCategory_ShowRecommendView() throws {
-        navigateRecommend()
+        navigateRecommend(app: app!)
         let recommendButton = app!.buttons["러블랑"]
         XCTAssertTrue(recommendButton.exists)
     }
     
     func test_CompactDevice_ClickRecommend_ShowRecommendDetailView() throws {
-        navigateRecommendDetail()
+        navigateRecommendDetail(app: app!)
         let informationText = app!.staticTexts["Information"]
         XCTAssertTrue(informationText.exists)
-    }
-    
-    private func navigateRecommend() {
-        let categoryCoffeeButton = app!.buttons["카페"]
-        categoryCoffeeButton.tap()
-    }
-    
-    private func navigateRecommendDetail() {
-        navigateRecommend()
-        let recommendButton = app!.buttons["러블랑"]
-        recommendButton.tap()
     }
 }

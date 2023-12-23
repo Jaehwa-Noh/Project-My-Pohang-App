@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CFA30D4A2B36CF2D00C161A6 /* MyPohangAppViewRegular.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA30D492B36CF2D00C161A6 /* MyPohangAppViewRegular.swift */; };
+		CFA30D4C2B36CFB200C161A6 /* NavigationNavigates.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA30D4B2B36CFB200C161A6 /* NavigationNavigates.swift */; };
 		CFA9D73A2B35610600A8F326 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D7392B35610600A8F326 /* Category.swift */; };
 		CFA9D73C2B35613800A8F326 /* CategoryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D73B2B35613800A8F326 /* CategoryUtils.swift */; };
 		CFA9D73E2B35755600A8F326 /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9D73D2B35755600A8F326 /* Recommend.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CFA30D492B36CF2D00C161A6 /* MyPohangAppViewRegular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPohangAppViewRegular.swift; sourceTree = "<group>"; };
+		CFA30D4B2B36CFB200C161A6 /* NavigationNavigates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationNavigates.swift; sourceTree = "<group>"; };
 		CFA9D7392B35610600A8F326 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CFA9D73B2B35613800A8F326 /* CategoryUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUtils.swift; sourceTree = "<group>"; };
 		CFA9D73D2B35755600A8F326 /* Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				CFB11A292B36BFA30054071E /* MyPohangAppViewCompactTest.swift */,
+				CFA30D492B36CF2D00C161A6 /* MyPohangAppViewRegular.swift */,
+				CFA30D4B2B36CFB200C161A6 /* NavigationNavigates.swift */,
 			);
 			path = "My Pohang AppUITests";
 			sourceTree = "<group>";
@@ -318,6 +324,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA30D4C2B36CFB200C161A6 /* NavigationNavigates.swift in Sources */,
+				CFA30D4A2B36CF2D00C161A6 /* MyPohangAppViewRegular.swift in Sources */,
 				CFB11A2A2B36BFA30054071E /* MyPohangAppViewCompactTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
