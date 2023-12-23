@@ -18,17 +18,18 @@ struct RecommendListView: View {
     }
     
     var body: some View {
-        ZStack {
-            ScrollView {
-                LazyVStack(alignment: .leading) {
-                    ForEach(recommendListViewModel.recommends) {
-                        recommend in
+        ScrollView {
+            LazyVStack(alignment: .leading) {
+                ForEach(recommendListViewModel.recommends) {
+                    recommend in
+                    NavigationLink {
+                        RecommendDetailView(recommend: recommend)
+                    } label: {
                         RecommendListItem(recommend: recommend)
                     }
                 }
-                .padding(8)
             }
-            
+            .padding(8)
         }
     }
 }
@@ -45,6 +46,7 @@ struct RecommendListItem: View {
             
             Text("\(recommend.name)")
                 .font(.title)
+                .multilineTextAlignment(.leading)
         }
     }
 }
