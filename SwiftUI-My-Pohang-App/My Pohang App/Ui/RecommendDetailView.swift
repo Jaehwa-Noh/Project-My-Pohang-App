@@ -43,6 +43,7 @@ struct RecommendDetailTextAreaView: View {
                 Spacer()
                     .frame(height: 8)
                 Text("\(recommend.information)")
+                    .accessibilityIdentifier("Information")
                     .font(.body)
                 Spacer()
                     .frame(height: 8)
